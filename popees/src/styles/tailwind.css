@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-popees-pink: #e21a5a;
+    --color-popees-pink-light: #ff5870;
+    --color-popees-pink-hover: #c4134b;
+    --color-popees-pink-bg: #fff3f3;
+    --color-popees-cream: #fef5ee;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    color: #000;
+    background: #fff;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Comfortaa', sans-serif;
+    font-weight: 700;
+  }
+}
+
+@layer utilities {
+  .font-heading {
+    font-family: 'Comfortaa', sans-serif;
+  }
+
+  .font-body {
+    font-family: 'Inter', sans-serif;
+  }
+
+  .text-popees-pink {
+    color: #e21a5a;
+  }
+
+  .bg-popees-pink {
+    background-color: #e21a5a;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
