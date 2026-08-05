@@ -1,4 +1,5 @@
-import React from 'react';
+"use client";
+import React, { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Header from '@/components/Header';
@@ -16,6 +17,63 @@ const babyCategories = [
 { title: 'Baby Rompers', href: 'https://www.popees.com/collections/baby-rompers', img: 'https://www.popees.com/cdn/shop/files/1011011.jpg?v=1774117496&width=400', count: '22+ styles' },
 { title: 'Baby Dungaree', href: 'https://www.popees.com/collections/baby-dungaree-new', img: 'https://www.popees.com/cdn/shop/files/1_49e5777f-74d7-459c-81a5-7b34c5334dbf.jpg?v=1774117923&width=400', count: '10+ styles' }];
 
+const categoryDropdownSections = [
+  {
+    title: 'Baby',
+    items: [
+      { label: 'Baby Jhabla', href: 'https://www.popees.com/collections/baby-jhabla-new' },
+      { label: 'Baby Tops', href: 'https://www.popees.com/collections/baby-top-new' },
+      { label: 'Baby T-shirt', href: 'https://www.popees.com/collections/baby-t-shirt-new' },
+      { label: 'Baby Shirt', href: 'https://www.popees.com/collections/baby-shirt-new' },
+      { label: 'Baby Dress', href: 'https://www.popees.com/collections/baby-dresses-1' },
+      { label: 'Baby Shorts', href: 'https://www.popees.com/collections/baby-shorts-new' },
+      { label: 'Baby Pants', href: 'https://www.popees.com/collections/baby-pants-new' },
+      { label: 'Baby Cord Set', href: 'https://www.popees.com/collections/baby-co-ord-sets-new' },
+      { label: 'Baby Sleepsuit', href: 'https://www.popees.com/collections/baby-sleepsuit-new' },
+      { label: 'Baby Dungaree', href: 'https://www.popees.com/collections/baby-dungaree-new' },
+    ],
+  },
+  {
+    title: 'Girls',
+    items: [
+      { label: 'T shirt', href: 'https://www.popees.com/collections/girls-t-shirt-new' },
+      { label: 'Top', href: 'https://www.popees.com/collections/girls-top-new' },
+      { label: 'Dress', href: 'https://www.popees.com/collections/girls-dresses-new' },
+      { label: 'Pants', href: 'https://www.popees.com/collections/girls-pants-new' },
+      { label: 'Shorts', href: 'https://www.popees.com/collections/girls-shorts-new' },
+    ],
+  },
+  {
+    title: 'Boys',
+    items: [
+      { label: 'Shirt', href: 'https://www.popees.com/collections/boys-shirt-new' },
+      { label: 'T shirt', href: 'https://www.popees.com/collections/boys-t-shirt-new' },
+      { label: 'Pants', href: 'https://www.popees.com/collections/boys-pants-new' },
+      { label: 'Shorts', href: 'https://www.popees.com/collections/boys-shorts-new' },
+      { label: 'Dungaree', href: 'https://www.popees.com/collections/boys-dungaree-new' },
+    ],
+  },
+  {
+    title: 'Baby Basics',
+    items: [
+      { label: 'Fabric Wash', href: 'https://www.popees.com/collections/fabric-wash-new' },
+      { label: 'Wipes', href: 'https://www.popees.com/collections/Baby-wipes' },
+      { label: 'Diaper', href: 'https://www.popees.com/collections/diaper-new' },
+      { label: 'Baby Soap', href: 'https://www.popees.com/collections/soap-new' },
+      { label: 'Baby Shampoo', href: 'https://www.popees.com/collections/shampoo-new' },
+    ],
+  },
+  {
+    title: 'Accessories',
+    items: [
+      { label: 'Pillow', href: 'https://www.popees.com/collections/pillow-new' },
+      { label: 'Towel', href: 'https://www.popees.com/collections/baby-towels-new' },
+      { label: 'Swaddle Wrap', href: 'https://www.popees.com/collections/swaddle-wrap-new' },
+      { label: 'Bibs', href: 'https://www.popees.com/collections/bibs' },
+      { label: 'Mittens', href: 'https://www.popees.com/collections/mittens-new' },
+    ],
+  },
+];
 
 const featuredProducts = [
 { id: 'b1', name: 'Popees Baby Boys Full Sleeve Muslin Cotton Jhabla | Off-White | 0-12 Months', shortName: 'Popees Baby Boys Full Sleev...', price: '$ 399.00', href: 'https://www.popees.com/products/popees-baby-boys-full-sleeve-cotton-jhabla-off-white-0-12-months', img: "https://img.rocket.new/generatedImages/rocket_gen_img_11280f753-1769340082329.png" },
@@ -26,6 +84,16 @@ const featuredProducts = [
 
 
 export default function BabyPage() {
+  const [selectedCategory, setSelectedCategory] = useState('');
+
+  const handleCategoryChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const href = event.target.value;
+    setSelectedCategory(href);
+    if (href) {
+      window.location.href = href;
+    }
+  };
+
   return (
     <div className="min-h-screen bg-white">
       <Header />
@@ -73,6 +141,31 @@ export default function BabyPage() {
 
         {/* Categories */}
         <div className="max-w-[1400px] mx-auto px-4 py-6">
+          <div className="mb-4">
+            <label htmlFor="category-dropdown" className="block text-sm font-medium text-gray-900 mb-2">
+              Shop by Category
+            </label>
+            <div className="relative inline-block w-full sm:w-72">
+              <select
+                id="category-dropdown"
+                value={selectedCategory}
+                onChange={handleCategoryChange}
+                className="block w-full appearance-none rounded-xl border border-gray-200 bg-white py-3 pl-4 pr-10 text-sm text-gray-900 shadow-sm focus:border-[#e21a5a] focus:outline-none focus:ring-2 focus:ring-[#e21a5a]/20"
+              >
+                <option value="">Select a category</option>
+                {babyCategories?.map((cat) => (
+                  <option key={cat.title} value={cat.href}>
+                    {cat.title}
+                  </option>
+                ))}
+              </select>
+              <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3 text-gray-400">
+                <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </div>
+            </div>
+          </div>
           <h2 className="text-lg font-heading font-bold text-gray-900 mb-4">Shop by Category</h2>
           <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-3">
             {babyCategories?.map((cat) =>
@@ -82,6 +175,9 @@ export default function BabyPage() {
                 </div>
                 <h3 className="text-xs font-medium text-gray-800 group-hover:text-[#e21a5a] transition-colors">{cat?.title}</h3>
                 <p className="text-xs text-gray-400">{cat?.count}</p>
+                <span className="mt-1 block text-[10px] text-[#e21a5a] opacity-0 group-hover:opacity-100 transition-opacity">
+                  View collection
+                </span>
               </Link>
             )}
           </div>
