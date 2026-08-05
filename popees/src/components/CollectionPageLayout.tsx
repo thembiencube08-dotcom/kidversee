@@ -27,6 +27,7 @@ interface FilterGroup {
 
 interface CollectionPageLayoutProps {
   title: string;
+  description?: string;
   itemCount: number;
   products: CollectionProduct[];
   bannerImg?: string;
@@ -179,6 +180,7 @@ function QuickAddModal({ product, onClose }: QuickAddModalProps) {
 
 export default function CollectionPageLayout({
   title,
+  description,
   itemCount,
   products,
   bannerImg,
@@ -248,13 +250,15 @@ export default function CollectionPageLayout({
           <div className="text-center py-8 px-4">
             <h1
               className="text-2xl font-medium"
-              style={{
-                fontFamily: 'Comfortaa, cursive',
-                color: '#e21a5a',
-              }}
+              style={{ fontFamily: 'Comfortaa, cursive', color: '#e21a5a' }}
             >
               {title.toLowerCase()}
             </h1>
+            {description && (
+              <p className="text-sm text-gray-500 mt-2 max-w-xl mx-auto leading-relaxed">
+                {description}
+              </p>
+            )}
           </div>
         )}
 

@@ -1,6 +1,5 @@
 import React from 'react';
 import type { Metadata, Viewport } from 'next';
-import '../styles/index.css';
 import '../styles/tailwind.css';
 import { CartProvider } from '@/lib/cartContext';
 
@@ -10,28 +9,27 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: 'Popees Baby Care Products | Trusted Baby Shop Online in Best Price',
-  description: 'Popees Baby Care - Trusted Baby Shop Online. Shop baby clothing, diapers, wipes, bamboo collection and more at best prices.',
+  title: 'Popees — Premium Baby Care',
+  description: 'Trusted baby clothing, diapers, bamboo collection and care products. Crafted with love for your little ones.',
   icons: {
-    icon: [
-      { url: '/favicon.ico', type: 'image/x-icon' }
-    ],
+    icon: [{ url: '/favicon.ico', type: 'image/x-icon' }],
   },
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-</head>
-      <body>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800;900&family=Geist+Mono:wght@400;500;600&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body className="bg-black text-[#ededed] antialiased" suppressHydrationWarning>
         <CartProvider>
           {children}
         </CartProvider>
