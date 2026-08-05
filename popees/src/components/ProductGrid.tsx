@@ -163,7 +163,7 @@ export default function ProductGrid({ title, viewAllHref, products, bgColor = 'b
   const [quickAddProduct, setQuickAddProduct] = useState<Product | null>(null);
 
   return (
-    <section className={`py-10 ${bgColor}`}>
+    <section className={`py-6 md:py-8 ${bgColor}`}>
       <div className="max-w-[1400px] mx-auto px-4">
         {/* Header */}
         <div className="flex items-center justify-between mb-6">

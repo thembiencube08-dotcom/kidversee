@@ -1,16 +1,14 @@
 import React from 'react';
 import Header from '@/components/Header';
 import HeroSlider from '@/components/HeroSlider';
-import CategoryCircles from '@/components/CategoryCircles';
+import CategorySection from '@/components/CategorySection';
 import MarqueeBar from '@/components/MarqueeBar';
 import NaturalFabricsBanner from '@/components/NaturalFabricsBanner';
 import ProductGrid from '@/components/ProductGrid';
-import EverythingForYou from '@/components/EverythingForYou';
 import MadeWithLove from '@/components/MadeWithLove';
 import WhyPopees from '@/components/WhyPopees';
 import ShopTheMoments from '@/components/ShopTheMoments';
 import Footer from '@/components/Footer';
-import EverythingBanner from '@/components/EverythingBanner';
 import TrendingBanner from '@/components/TrendingBanner';
 
 const newArrivalsProducts = [
@@ -238,7 +236,7 @@ export default function HomePage() {
     <main className="min-h-screen bg-white">
       <Header />
       <HeroSlider />
-      <CategoryCircles />
+      <CategorySection />
       <MarqueeBar />
       <NaturalFabricsBanner />
       <MarqueeBar />
@@ -247,8 +245,6 @@ export default function HomePage() {
         viewAllHref="/collections/whats-new-baby-care"
         products={newArrivalsProducts} />
       
-      <EverythingBanner />
-      <EverythingForYou />
       <TrendingBanner />
       <ProductGrid
         title="trending now"

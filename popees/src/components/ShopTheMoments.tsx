@@ -3,94 +3,92 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
+const moments = [
+  {
+    href: '/collections/baby-new',
+    img: 'https://www.popees.com/cdn/shop/files/You_Baby_-_Header.jpg?v=1775190834&width=828',
+    alt: 'Baby hands close up',
+  },
+  {
+    href: '/collections/newborn',
+    img: 'https://www.popees.com/cdn/shop/files/You_Baby_-_Mobile.jpg?v=1775190837&width=828',
+    alt: 'Sleeping newborn baby',
+  },
+  {
+    href: '/collections/whats-new-baby-care',
+    img: 'https://www.popees.com/cdn/shop/files/You_Baby_Footer_-_Mobile.jpg?v=1775190740&width=828',
+    alt: 'Smiling baby in yellow onesie',
+  },
+  {
+    href: '/collections/baby-clothing',
+    img: 'https://www.popees.com/cdn/shop/files/Bamboo_90517547-f1dc-4337-8d36-651a58b527be.jpg?v=1782889207&width=828',
+    alt: 'Crawling baby product',
+  },
+  {
+    href: '/collections/boys-new',
+    img: 'https://www.popees.com/cdn/shop/files/Maternity_Wear.jpg?v=1772273982&width=828',
+    alt: 'Happy toddler boy',
+  },
+];
+
 export default function ShopTheMoments() {
   return (
-    <section className="py-16 bg-white">
-      <div className="max-w-[1400px] mx-auto px-4">
+    <section className="py-12 bg-white">
+      <div className="max-w-[1200px] mx-auto px-4">
         <h2 className="text-2xl md:text-4xl font-heading font-bold text-[#e21a5a] text-center mb-10">
           shop the moments
         </h2>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
-          {/* Large left image */}
-          <div className="col-span-2 row-span-2 relative rounded-2xl overflow-hidden group cursor-pointer" style={{ minHeight: '300px' }}>
-            <Link href="/collections/baby-new">
+
+        {/* 5-column portrait card row */}
+        <div className="flex gap-3 md:gap-4 overflow-x-auto pb-2 md:overflow-visible">
+          {moments.map((item, i) => (
+            <Link
+              key={i}
+              href={item.href}
+              className="group relative flex-shrink-0 w-[42vw] md:w-0 md:flex-1 rounded-2xl overflow-hidden bg-[#f5e8e8]"
+              style={{ aspectRatio: '9/16' }}
+            >
+              {/* Thumbnail image */}
               <Image
-                src="https://www.popees.com/cdn/shop/files/You_Baby_-_Header.jpg?v=1775190834&width=1920"
-                alt="Shop Baby Collection"
+                src={item.img}
+                alt={item.alt}
                 fill
                 className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
-                sizes="(max-width: 768px) 100vw, 50vw" />
-              
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end p-6">
-                <div>
-                  <h3 className="text-white font-heading font-bold text-2xl">Baby Collection</h3>
-                  <p className="text-white/80 text-sm mt-1">Shop Now</p>
+                sizes="(max-width: 768px) 42vw, 20vw"
+              />
+
+              {/* Subtle dark overlay */}
+              <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors duration-300" />
+
+              {/* Play button */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="w-11 h-11 md:w-13 md:h-13 rounded-full bg-black/70 flex items-center justify-center shadow-lg group-hover:bg-black/85 transition-colors duration-200">
+                  {/* Triangle play icon */}
+                  <svg
+                    viewBox="0 0 24 24"
+                    className="w-5 h-5 fill-white ml-0.5"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </div>
+              </div>
+
+              {/* Popees logo watermark — top area */}
+              <div className="absolute top-3 left-0 right-0 flex justify-center">
+                <div className="bg-white/0 px-2 py-0.5">
+                  <span
+                    className="text-[#e21a5a] font-bold text-xs tracking-wide drop-shadow-sm"
+                    style={{ fontFamily: 'Georgia, serif', letterSpacing: '0.04em' }}
+                  >
+                    <span className="text-base">p</span>opees
+                  </span>
                 </div>
               </div>
             </Link>
-          </div>
-          {/* Top right */}
-          <div className="relative rounded-2xl overflow-hidden group cursor-pointer" style={{ minHeight: '150px' }}>
-            <Link href="/collections/girls-new">
-              <Image
-                src="https://www.popees.com/cdn/shop/files/You_Baby_Footer_-_Mobile.jpg?v=1775190740&width=828"
-                alt="Girls Collection"
-                fill
-                className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
-                sizes="25vw" />
-              
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end p-4">
-                <h3 className="text-white font-heading font-bold text-lg">Girls</h3>
-              </div>
-            </Link>
-          </div>
-          {/* Top right 2 */}
-          <div className="relative rounded-2xl overflow-hidden group cursor-pointer" style={{ minHeight: '150px' }}>
-            <Link href="/collections/boys-new">
-              <Image
-                src="https://www.popees.com/cdn/shop/files/You_Baby_-_Mobile.jpg?v=1775190837&width=828"
-                alt="Boys Collection"
-                fill
-                className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
-                sizes="25vw" />
-              
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end p-4">
-                <h3 className="text-white font-heading font-bold text-lg">Boys</h3>
-              </div>
-            </Link>
-          </div>
-          {/* Bottom right */}
-          <div className="relative rounded-2xl overflow-hidden group cursor-pointer" style={{ minHeight: '150px' }}>
-            <Link href="/collections/bamboo">
-              <Image
-                src="https://www.popees.com/cdn/shop/files/Bamboo_90517547-f1dc-4337-8d36-651a58b527be.jpg?v=1782889207&width=1920"
-                alt="Bamboo Collection"
-                fill
-                className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
-                sizes="25vw" />
-              
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end p-4">
-                <h3 className="text-white font-heading font-bold text-lg">Bamboo</h3>
-              </div>
-            </Link>
-          </div>
-          {/* Bottom right 2 */}
-          <div className="relative rounded-2xl overflow-hidden group cursor-pointer" style={{ minHeight: '150px' }}>
-            <Link href="/collections/maternity-wear">
-              <Image
-                src="https://www.popees.com/cdn/shop/files/Maternity_Wear.jpg?v=1772273982&width=1920"
-                alt="Maternity Wear"
-                fill
-                className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
-                sizes="25vw" />
-              
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end p-4">
-                <h3 className="text-white font-heading font-bold text-lg">Maternity</h3>
-              </div>
-            </Link>
-          </div>
+          ))}
         </div>
       </div>
-    </section>);
-
+    </section>
+  );
 }
