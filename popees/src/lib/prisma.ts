@@ -1,9 +1,3 @@
-import { PrismaClient } from '@prisma/client';
-
-const globalForPrisma = global as unknown as { prisma?: PrismaClient };
-
-export const prisma = globalForPrisma.prisma ?? new PrismaClient();
-
-if (process.env.NODE_ENV !== 'production') {
-  globalForPrisma.prisma = prisma;
-}
+// Prisma is not configured in this project.
+// All data is served from mockData.ts
+export const prisma = null;

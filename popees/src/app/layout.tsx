@@ -2,6 +2,7 @@ import React from 'react';
 import type { Metadata, Viewport } from 'next';
 import '../styles/tailwind.css';
 import { CartProvider } from '@/lib/cartContext';
+import ShopAssistant from '@/components/ShopAssistant';
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -32,6 +33,7 @@ export default function RootLayout({
       <body className="bg-black text-[#ededed] antialiased" suppressHydrationWarning>
         <CartProvider>
           {children}
+          <ShopAssistant />
         </CartProvider>
       </body>
     </html>
