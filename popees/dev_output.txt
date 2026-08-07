@@ -1,0 +1,52 @@
+
+> popees@0.1.0 dev
+> next dev -p 4028
+
+   ▲ Next.js 15.5.18
+   - Local:        http://localhost:4028
+   - Network:      http://192.168.0.124:4028
+   - Environments: .env
+
+ ✓ Starting...
+ ✓ Ready in 2.8s
+ ○ Compiling / ...
+ ✓ Compiled / in 4.4s (2005 modules)
+ GET / 200 in 5137ms
+ ✓ Compiled in 1033ms (939 modules)
+ GET / 200 in 418ms
+ GET / 200 in 602ms
+ GET / 200 in 830ms
+ ○ Compiling /collections/girls-new ...
+ ✓ Compiled /collections/girls-new in 1770ms (1996 modules)
+ GET /collections/girls-new 200 in 2152ms
+ ○ Compiling /collections/end-of-season-sale ...
+ ✓ Compiled /collections/end-of-season-sale in 1098ms (2005 modules)
+ GET /collections/end-of-season-sale 200 in 1357ms
+ ○ Compiling /collections/bamboo ...
+ ✓ Compiled /collections/bamboo in 1774ms (2012 modules)
+ GET /collections/bamboo 200 in 2073ms
+ GET /collections/girls-new 200 in 96ms
+ GET / 200 in 797ms
+ GET / 200 in 77ms
+ GET /collections/bamboo 200 in 123ms
+ ○ Compiling /collections/baby-new ...
+ ✓ Compiled /collections/baby-new in 2.4s (2014 modules)
+ GET /collections/baby-new 200 in 2779ms
+ GET / 200 in 96ms
+ GET / 200 in 5243ms
+ GET / 200 in 3683ms
+ ✓ Compiled in 1845ms (945 modules)
+ GET / 200 in 383ms
+ ✓ Compiled in 7.5s (2038 modules)
+ GET / 200 in 930ms
+ ✓ Compiled in 9s (2041 modules)
+ GET / 200 in 1282ms
+ ✓ Compiled in 2.3s (2041 modules)
+ GET / 200 in 502ms
+ ✓ Compiled in 3.3s (2041 modules)
+ GET / 200 in 313ms
+ GET / 200 in 2380ms
+ ✓ Compiled in 1772ms (2041 modules)
+ ✓ Compiled in 1720ms (2041 modules)
+ GET / 200 in 1649ms
+[?25h

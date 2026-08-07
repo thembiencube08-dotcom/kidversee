@@ -9,7 +9,6 @@ import MadeWithLove from '@/components/MadeWithLove';
 import WhyPopees from '@/components/WhyPopees';
 import ShopTheMoments from '@/components/ShopTheMoments';
 import Footer from '@/components/Footer';
-import TrendingBanner from '@/components/TrendingBanner';
 
 const newArrivalsProducts = [
 {
@@ -245,12 +244,12 @@ export default function HomePage() {
         viewAllHref="/collections/whats-new-baby-care"
         products={newArrivalsProducts} />
       
-      <TrendingBanner />
       <ProductGrid
         title="trending now"
         viewAllHref="/collections/trending-now-baby-care"
         products={trendingProducts}
-        bgColor="bg-white" />
+        bgColor="bg-white"
+        noTopPadding />
       
       <MadeWithLove />
       <ProductGrid

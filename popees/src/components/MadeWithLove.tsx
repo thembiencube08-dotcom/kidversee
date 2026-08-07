@@ -32,7 +32,7 @@ const categories = [
   {
     label: 'Oral Care',
     href: '/collections/baby-oral-care-new',
-    img: 'https://www.popees.com/cdn/shop/files/Bath_Grooming_Header.jpg?v=1776144452&width=600'
+    img: '/assets/images/oral-care-banana-toothpaste.webp'
   }
 ];
 

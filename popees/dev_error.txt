@@ -1,0 +1,20 @@
+ ⚠ Warning: Next.js inferred your workspace root, but it may not be correct.
+ We detected multiple lockfiles and selected the directory of C:\Users\eyami\Downloads\softwarespecialization\kidsmart\package-lock.json as the root directory.
+ To silence this warning, set `outputFileTracingRoot` in your Next.js config, or consider removing one of the lockfiles if it's not needed.
+   See https://nextjs.org/docs/app/api-reference/config/next-config-js/output#caveats for more information.
+ Detected additional lockfiles: 
+   * C:\Users\eyami\Downloads\softwarespecialization\kidsmart\kidversee\popees\package-lock.json
+   * C:\Users\eyami\Downloads\softwarespecialization\kidsmart\kidversee\package-lock.json
+
+ ⨯ ReferenceError: CategoryCircles is not defined
+    at HomePage (src\app\page.tsx:241:8)
+  239 |       <Header />
+  240 |       <HeroSlider />
+> 241 |       <CategoryCircles />
+      |        ^
+  242 |       <MarqueeBar />
+  243 |       <NaturalFabricsBanner />
+  244 |       <MarqueeBar /> {
+  digest: '3327255098'
+}
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.

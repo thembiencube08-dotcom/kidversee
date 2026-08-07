@@ -32,6 +32,7 @@ interface ProductGridProps {
   viewAllHref: string;
   products: Product[];
   bgColor?: string;
+  noTopPadding?: boolean;
 }
 
 interface QuickAddModalProps {
@@ -159,11 +160,11 @@ function QuickAddModal({ product, onClose }: QuickAddModalProps) {
   );
 }
 
-export default function ProductGrid({ title, viewAllHref, products, bgColor = 'bg-white' }: ProductGridProps) {
+export default function ProductGrid({ title, viewAllHref, products, bgColor = 'bg-white', noTopPadding = false }: ProductGridProps) {
   const [quickAddProduct, setQuickAddProduct] = useState<Product | null>(null);
 
   return (
-    <section className={`py-6 md:py-8 ${bgColor}`}>
+    <section className={`${noTopPadding ? 'pt-0 pb-6 md:pb-8' : 'py-6 md:py-8'} ${bgColor}`}>
       <div className="max-w-[1400px] mx-auto px-4">
         {/* Header */}
         <div className="flex items-center justify-between mb-6">

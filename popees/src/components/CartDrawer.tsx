@@ -33,28 +33,28 @@ export default function CartDrawer() {
         }`}
       >
         {/* Header */}
-        <div className="flex items-center justify-between px-5 py-4 border-b border-gray-100">
-          <h2 className="text-lg font-bold text-gray-900">
+        <div className="flex items-center justify-between px-5 py-4 border-b border-[#fce4ec]" style={{ background: 'linear-gradient(135deg, #e21a5a 0%, #ff5580 100%)' }}>
+          <h2 className="text-lg font-bold text-white">
             Your Cart{' '}
             {items?.length > 0 && (
-              <span className="text-sm font-normal text-gray-500">
+              <span className="text-sm font-normal text-white/70">
                 ({items?.reduce((s, i) => s + i?.quantity, 0)} items)
               </span>
             )}
           </h2>
           <button
             onClick={closeCart}
-            className="p-2 rounded-full hover:bg-gray-100 transition-colors"
+            className="p-2 rounded-full bg-white/20 hover:bg-white/30 transition-colors"
             aria-label="Close cart"
           >
-            <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
         </div>
 
         {/* Items */}
-        <div className="flex-1 overflow-y-auto px-5 py-4 space-y-4">
+        <div className="flex-1 overflow-y-auto px-5 py-4 space-y-4" style={{ background: '#fff9fb' }}>
           {items?.length === 0 ? (
             <div className="flex flex-col items-center justify-center h-full text-center py-16">
               <svg className="w-16 h-16 text-gray-200 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -132,12 +132,12 @@ export default function CartDrawer() {
 
         {/* Footer */}
         {items?.length > 0 && (
-          <div className="px-5 py-4 border-t border-gray-100 bg-white">
-            <div className="flex items-center justify-between mb-3">
+          <div className="px-5 py-4 border-t border-[#fce4ec] bg-white">
+            <div className="flex items-center justify-between mb-1">
               <span className="text-sm text-gray-600">Subtotal</span>
-              <span className="text-base font-bold text-gray-900">₹ {totalPrice?.toFixed(2)}</span>
+              <span className="text-base font-bold text-[#e21a5a]">₹ {totalPrice?.toFixed(2)}</span>
             </div>
-            <p className="text-xs text-gray-400 mb-4 text-center">Shipping & taxes calculated at checkout</p>
+            <p className="text-xs text-gray-400 mb-4 text-center">Shipping &amp; taxes calculated at checkout</p>
             <Link
               href="/checkout"
               onClick={closeCart}
@@ -147,7 +147,7 @@ export default function CartDrawer() {
             </Link>
             <button
               onClick={closeCart}
-              className="w-full mt-2 border border-gray-200 text-gray-700 py-2.5 rounded-full text-sm font-medium hover:border-[#e21a5a] hover:text-[#e21a5a] transition-colors"
+              className="w-full mt-2 border border-[#e21a5a] text-[#e21a5a] py-2.5 rounded-full text-sm font-medium hover:bg-[#fff0f4] transition-colors"
             >
               Continue Shopping
             </button>

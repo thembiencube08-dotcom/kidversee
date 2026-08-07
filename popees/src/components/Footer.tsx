@@ -18,6 +18,7 @@ const footerLinks = {
   support: [
   { label: "FAQ\'s", href: '/pages/faqs' },
   { label: 'Contact Us', href: '/pages/contact' },
+  { label: 'Delivery', href: '/delivery' },
   { label: 'All Products', href: '/collections/all' },
   { label: 'Make your kit', href: '/pages/make-your-kit' },
   { label: 'Order and Returns', href: '#' },
