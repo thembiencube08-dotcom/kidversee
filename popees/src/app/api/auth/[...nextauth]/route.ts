@@ -1,5 +1,10 @@
-import NextAuth from 'next-auth';
-import { authOptions } from '@/lib/auth';
+// next-auth not configured — stub route to prevent build errors
+import { NextResponse } from 'next/server';
 
-const handler = NextAuth(authOptions);
-export { handler as GET, handler as POST };
+export async function GET() {
+  return NextResponse.json({ error: 'Auth not configured' }, { status: 501 });
+}
+
+export async function POST() {
+  return NextResponse.json({ error: 'Auth not configured' }, { status: 501 });
+}
