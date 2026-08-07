@@ -1,6 +1,7 @@
 'use client';
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useCart } from '@/lib/cartContext';
 import CartDrawer from '@/components/CartDrawer';
 
@@ -14,6 +15,7 @@ const navLinks = [
   { label: 'Admin', href: '/admin' },
 ];
 
+// Merged category list: includes local entries and remote additions, with consistent structure
 const categoryLinks = [
   { label: 'Independence Day', href: '/collections/independence-day', external: false, hasMegaMenu: false, badge: null },
   { label: 'Baby Shoes', href: '/collections/baby-shoes', external: false, hasMegaMenu: false, badge: null },
@@ -28,6 +30,7 @@ const categoryLinks = [
   { label: 'Accessories', href: '/collections/accessories-new', external: false, hasMegaMenu: false, badge: null },
   { label: 'Diaper', href: '/collections/diaper-new', external: false, hasMegaMenu: false, badge: null },
   { label: 'Baby Basics', href: '/collections/fmcg', external: false, hasMegaMenu: false, badge: 'POPULAR' },
+  { label: 'Shop By Price', href: '#', external: false, hasMegaMenu: false, badge: null },
 ];
 
 const megaMenuColumns = [
@@ -128,8 +131,8 @@ export default function Header() {
     <>
       <header className={`sticky top-0 z-50 w-full bg-white transition-shadow duration-300 ${scrolled ? 'shadow-md' : ''}`}>
         {/* Top Nav */}
-        <div className="border-b border-gray-100">
-          <div className="max-w-[1400px] mx-auto px-4 flex items-center justify-between h-[60px]">
+        <div className="bg-white border-b border-gray-100">
+          <div className="max-w-[1400px] mx-auto px-4 flex items-center justify-between h-[80px]">
             {/* Mobile Menu Button */}
             <button
               className="md:hidden p-2 hover:text-[#e21a5a] transition-colors"
@@ -156,10 +159,13 @@ export default function Header() {
 
             {/* Logo */}
             <Link href="/" className="flex items-center justify-center absolute left-1/2 -translate-x-1/2 md:static md:translate-x-0">
-              <img
-                src="https://www.popees.com/cdn/shop/files/popees_logo.gif?v=1775814201&width=500"
-                alt="Popees Baby Care"
-                className="h-12 w-auto object-contain drop-shadow-md"
+              <Image
+                src="/assets/images/kidverse-logo.png"
+                alt="KidVerse - Every Little Smile"
+                width={320}
+                height={100}
+                className="h-20 w-auto object-contain"
+                priority
               />
             </Link>
 
