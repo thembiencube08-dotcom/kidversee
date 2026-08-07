@@ -17,7 +17,6 @@ const navLinks = [
 ];
 
 const categoryLinks = [
-  { label: 'Independence Day', href: 'https://www.popees.com/collections/independence-day', badge: null, external: true },
   { label: 'Shop By Category', href: '#', badge: null, external: false },
   { label: 'Baby', href: '/collections/baby-new', badge: null, external: false },
   { label: 'Girls', href: '/collections/girls-new', badge: null, external: false },
@@ -95,7 +94,7 @@ export default function Header() {
       <header className={`sticky top-0 z-50 w-full transition-shadow duration-300 ${scrolled ? 'shadow-md' : ''}`}>
         {/* Top Nav */}
         <div className="bg-white border-b border-gray-100">
-          <div className="max-w-[1400px] mx-auto px-4 flex items-center justify-between h-[60px]">
+          <div className="max-w-[1400px] mx-auto px-4 flex items-center justify-between h-[80px]">
             {/* Mobile Menu Button */}
             <button
               className="md:hidden p-2 hover:text-[#e21a5a] transition-colors"
@@ -123,13 +122,12 @@ export default function Header() {
             {/* Logo */}
             <Link href="/" className="flex items-center justify-center absolute left-1/2 -translate-x-1/2 md:static md:translate-x-0">
               <Image
-                src="https://www.popees.com/cdn/shop/files/popees_logo.gif?v=1775814201&width=500"
-                alt="Popees Baby Care"
-                width={180}
-                height={60}
-                className="h-12 w-auto object-contain drop-shadow-md"
+                src="/assets/images/kidverse-logo.png"
+                alt="KidVerse - Every Little Smile"
+                width={320}
+                height={100}
+                className="h-20 w-auto object-contain"
                 priority
-                unoptimized
               />
             </Link>
 
