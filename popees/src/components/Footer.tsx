@@ -117,6 +117,31 @@ export default function Footer() {
 
   return (
     <footer className="bg-white">
+      {/* Supplier Band — top of footer */}
+      <div className="bg-[#fff0f5] border-b border-pink-100 py-5">
+        <div className="max-w-[1400px] mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-3">
+            <div className="w-9 h-9 rounded-lg bg-[#ff2d78] flex items-center justify-center flex-shrink-0">
+              <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+              </svg>
+            </div>
+            <div>
+              <p className="text-sm font-bold text-gray-800">Are you a supplier or manufacturer?</p>
+              <p className="text-xs text-gray-500">Partner with Popees and grow your business with us.</p>
+            </div>
+          </div>
+          <Link
+            href="/supplier/login"
+            className="inline-flex items-center gap-2 bg-pink-100 hover:bg-pink-200 text-[#ff2d78] text-sm font-semibold px-5 py-2.5 rounded-lg transition-all whitespace-nowrap flex-shrink-0"
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+            Become a Supplier
+          </Link>
+        </div>
+      </div>
 
       {/* Popular Categories */}
       <div className="py-6">

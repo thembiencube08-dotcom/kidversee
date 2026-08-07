@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-export function getStoredUser(...args) {
+export function getStoredUser(...args: any[]): { name: string; email?: string } | null {
   // eslint-disable-next-line no-console
   console.warn('Placeholder: getStoredUser is not implemented yet.', args);
   return null;
